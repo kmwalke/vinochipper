@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  gem:
+    build:
+      context: .
+    volumes:
+      - .:/app
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
