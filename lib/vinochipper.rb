@@ -44,13 +44,21 @@ end
 class WineList < VinoChipperModel
   def initialize(deets)
     super
-    self.winery = Winery.new(deets['winery'])
-    @deets['wines'] = []
-    deets['wines'].each { |wine| @deets['wines'].add(Wine.new(wine))}
+    self.winery    = Winery.new(winery)
+    self.wines     = wines.map { |wine| (Wine.new(wine))}
+    self.ships_to  = ships_to.map { |state| (State.new(state))}
   end
 
   def to_s
-    "Winery: #{winery}\nWines: #{wines}\n#{promotions}\n#{ships_to}\n#{special_shipping}"
+    "Winery: #{winery}
+
+Wines: #{wines.map{|wine| wine.to_s}}
+
+Promotions: #{promotions}
+
+Ships_to: #{ships_to.map{|state| state.to_s}}
+
+Special_Shipping: #{special_shipping}"
   end
 end
 
@@ -62,13 +70,15 @@ end
 
 class Wine < VinoChipperModel
   def to_s
-    'hi'
+    "id:'#{id}' name:'#{name}' abv:'#{abv}'"
+  end
+end
+
+class State < VinoChipperModel
+  def to_s
+    self.state
   end
 end
 
 
-# puts Vinochipper.wine_list(3005).to_s
-puts Wine.new({'brandName' => 'smc'}).brand_name
-w= Wine.new({'brand' => 'smc'})
-w.brand = 'thing'
-puts w.brand
+puts Vinochipper.wine_list(3005).to_s
