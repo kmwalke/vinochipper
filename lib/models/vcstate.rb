@@ -2,6 +2,6 @@ require 'models/vinochippermodel'
 
 class VCState < VinoChipperModel
   def to_s
-    self.state
+    state
   end
 end

@@ -5,26 +5,26 @@ require 'json'
 class VCWineListTest < Minitest::Test
   def setup
     @deets = {
-      "winery" => {
-        "id" => 1,
-        "name" => "Winery Name",
+      'winery' => {
+        'id' => 1,
+        'name' => 'Winery Name'
       },
-      "wines" => [
+      'wines' => [
         {
-          "id" => 1,
-          "name" => "Traditional Mead",
+          'id' => 1,
+          'name' => 'Traditional Mead'
         },
         {
-          "id" => 2,
-          "name" => "Sweet Mead",
+          'id' => 2,
+          'name' => 'Sweet Mead'
         }
       ],
-      "promotions" => [],
-      "shipsTo" => [
-        {"state" => "Alaska", "abbr" => "AK"},
-        {"state" => "Wyoming", "abbr" => "WY"}
+      'promotions' => [],
+      'shipsTo' => [
+        { 'state' => 'Alaska', 'abbr' => 'AK' },
+        { 'state' => 'Wyoming', 'abbr' => 'WY' }
       ],
-      "specialShipping" => []
+      'specialShipping' => []
     }
 
     @wine_list = VCWineList.new(@deets)

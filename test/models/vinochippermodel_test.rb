@@ -40,4 +40,12 @@ class VinoChipperModelTest < Minitest::Test
       @model.not_a_method
     end
   end
+
+  def test_respond_to
+    assert_equal true, @model.respond_to?(:foo)
+  end
+
+  def test_doesnt_respond_to
+    assert_equal false, @model.respond_to?(:not_a_method)
+  end
 end
