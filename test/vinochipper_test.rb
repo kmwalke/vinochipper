@@ -3,10 +3,6 @@ require 'json'
 require 'vinochipper'
 
 class VinoChipperTest < Minitest::Test
-  def setup
-    super
-  end
-
   def test_wine_list
     Net::HTTP.stub :get_response, MockHttpResponse.new do
       assert_equal VCWineList, VinoChipper.wine_list(1).class
