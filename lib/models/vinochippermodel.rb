@@ -14,7 +14,7 @@ class VinoChipperModel
     end
   end
 
-  def to_s
+  def keys
     @deets.keys
   end
 end

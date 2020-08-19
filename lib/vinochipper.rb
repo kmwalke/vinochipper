@@ -3,7 +3,7 @@ require 'net/http'
 
 require 'models/vcwinelist'
 
-class Vinochipper
+class VinoChipper
 
   BASE_URL = 'https://vinoshipper.com/json-api/v2/'.freeze
 
